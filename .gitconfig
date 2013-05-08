@@ -4,6 +4,14 @@
 [credential]
 	helper = cache --timeout 3600
 
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log -p
+
 [color]
   # Use colors in Git commands that are capable of colored output when outputting to the terminal
   ui = auto

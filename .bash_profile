@@ -14,12 +14,15 @@ txtcyn='\[\e[0;36m\]' # Cyan
 txtwht='\[\e[0;37m\]' # White
 txtrst='\[\e[0m\]'    # Text Reset
 
+PATH=/usr/local/heroku/bin:/usr/local/git/bin:$HOME/.rvm/bin:$HOME/Documents/scripts:$PATH
+
 HISTFILESIZE=9000
 
 # environment variables
 # export VARIABLE=key
 
 source ~/.rvm/scripts/rvm
+source ~/git-completion.bash
 
 # aliases
 alias ll='ls -al'
