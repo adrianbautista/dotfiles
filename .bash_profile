@@ -23,21 +23,24 @@ HISTFILESIZE=9000
 
 source ~/.rvm/scripts/rvm
 source ~/git-completion.bash
+source ~/.bashrc
 
 # aliases
 alias ll='ls -al'
 alias l='ls -a'
 alias b='cd ..'
-alias work='cd ~/Documents/programming/workspace'
-alias wdi='cd ~/Documents/wdi'
+alias work='cd ~/Workspace'
 alias a='alias'
 alias r='rails console'
 alias db='rails db'
 alias p='pry'
-alias g="git"
+alias git='hub'
+alias g='hub'
 alias h='history'
 alias o="open"
 alias oo="open ."
+alias be='bundle exec'
+alias ij='open -a /Applications/IntelliJ\ IDEA\ 12\ CE.app'
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
