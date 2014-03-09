@@ -1,3 +1,27 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" alternatively, pass a path where Vundle should install bundles
+" let path = '~/some/path/here'
+" call vundle#rc(path)
+
+" let Vundle manage Vundle, required
+Bundle 'gmarik/vundle'
+
+Bundle 'kien/ctrlp.vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-haml'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'bling/vim-airline'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'scrooloose/nerdtree'
+
+filetype plugin indent on
+
 " Wrap too long lines
 set wrap
 
@@ -62,28 +86,19 @@ set autowrite
 
 " allows hidden buffers to stay unsaved, but we do not want this, so comment
 " it out:
-"set hidden
+set hidden
 
-"set wmh=0
-
-"setup Vundle
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-Bundle 'lsdr/monokai'
+" hide current line of each minimized file
+set wmh=0
 
 " auto-detect the filetype
 " has to be called after Vundle to work
 filetype plugin indent on
 
-" syntax highlight
-syntax on
-if has('gui_running')
-  colorscheme monokai
-  set guifont=Source\ Code\ Pro:h13
-endif
+syntax enable
+" set background=dark
+" let g:solarized_termcolors = 256
+" colorscheme solarized
 
 " Always show the menu, insert longest match
 set completeopt=menuone,longest
@@ -95,3 +110,12 @@ autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal g`\"" |
   \ endif
+
+" Custom key bindings
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-g>'
+let g:multi_cursor_prev_key='<C-h>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
