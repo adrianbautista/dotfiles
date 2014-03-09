@@ -10,7 +10,7 @@ txtrst='\[\e[0m\]'    # Text Reset
 
 function branch
 {
-  git status 2> /dev/null | ruby $HOME/Scripts/branch.rb
+  git status 2> /dev/null | ruby $HOME/dotfiles/scripts/branch.rb
 }
 
 
