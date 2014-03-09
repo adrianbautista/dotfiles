@@ -1,0 +1,31 @@
+txtblk='\[\e[0;30m\]' # Black
+txtred='\[\e[0;31m\]' # Red
+txtgrn='\[\e[0;32m\]' # Green
+txtylw='\[\e[0;33m\]' # Yellow
+txtblu='\[\e[0;34m\]' # Blue
+txtpur='\[\e[0;35m\]' # Purple
+txtcyn='\[\e[0;36m\]' # Cyan
+txtwht='\[\e[0;37m\]' # White
+txtrst='\[\e[0m\]'    # Text Reset
+
+function branch
+{
+  git status 2> /dev/null | ruby $HOME/Scripts/branch.rb
+}
+
+
+# function parse_git_dirty() {
+#   [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
+# }
+
+# function parse_git_branch() {
+#   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+# }
+
+echo "----------------------------------------------------------------"
+echo "$(git --version)"
+echo "$(ruby -v)"
+echo "$(rails -v)"
+echo "node $(node -v)"
+echo "----------------------------------------------------------------"
+PS1="$txtylw\w$txtgrn\$(branch)$txtred †$txtrst "
