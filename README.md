@@ -14,3 +14,16 @@ cd ~/dotfiles
 chmod +x symlink_dotfiles.sh
 ./symlink_dotfiles.sh
 ```
+
+Edit the content of `.user_variables` in the dotfiles directory to store sensitive user variables and keys:
+
+```shell
+# EXAMPLE .user_variables 
+export KEY=value
+```
+```shell
+# EXAMPLE .user_gitconfig
+[user]
+  name = "Your Name"
+  email = user@email.com
+```

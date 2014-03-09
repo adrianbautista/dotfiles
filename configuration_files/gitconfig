@@ -1,6 +1,5 @@
-[user]
-	name = USER
-  email = user@email.com
+[include]
+  path = ~/dotfiles/.user_gitconfig
 [credential]
   helper = cache --timeout 3600
 [alias]
@@ -33,4 +32,4 @@
   remote = origin
   merge = refs/heads/master
 [core]
-  excludesfile = /Users/adrianbautista/.gitignore_global
+  excludesfile = $HOME/.gitignore_global

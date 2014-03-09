@@ -1,3 +1,6 @@
+# Load user specific variables and API KEYS
+[[ -s "$HOME/dotfiles/.user_variables" ]] && source "$HOME/dotfiles/.user_variables"
+
 # Append Homebrew path before system bin
 [[ -s "$HOME/.bash_path" ]] && source "$HOME/.bash_path"
 
