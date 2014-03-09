@@ -1,5 +1,5 @@
 [include]
-  path = ~/dotfiles/.user_gitconfig
+  path = ~/dotfiles/.user_gitconfig ;
 [credential]
   helper = cache --timeout 3600
 [alias]
