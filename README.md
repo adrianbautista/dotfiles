@@ -15,7 +15,7 @@ chmod +x symlink_dotfiles.sh
 ./symlink_dotfiles.sh
 ```
 
-Edit the content of `.user_variables` in the dotfiles directory to store sensitive user variables and keys:
+Edit the content of `.user_variables` and `.user_gitconfig` in the dotfiles directory to store sensitive user variables and keys:
 
 ```shell
 # EXAMPLE .user_variables 
