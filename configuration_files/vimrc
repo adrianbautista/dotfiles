@@ -19,6 +19,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'bling/vim-airline'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/nerdtree'
+Bundle 'mileszs/ack.vim'
 
 filetype plugin indent on
 
@@ -91,6 +92,11 @@ set hidden
 " hide current line of each minimized file
 set wmh=0
 
+" use the mouse
+set ttyfast
+set mouse=a
+set ttymouse=xterm2
+
 " auto-detect the filetype
 " has to be called after Vundle to work
 filetype plugin indent on
@@ -110,6 +116,11 @@ autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal g`\"" |
   \ endif
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd vimenter * if !argc() | NERDTree | endif
 
 " Custom key bindings
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
