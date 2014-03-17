@@ -32,10 +32,14 @@ for FILE in $CONFIG_FILES; do
 done
 
 # create .user_variables and .user_gitconfig file
-echo -n "Creating .user_variables in $DOTFILES_DIR"
+echo "Creating .user_variables in $DOTFILES_DIR"
 touch $DOTFILES_DIR/.user_variables
-echo -n "Creating .user_gitconfig in $DOTFILES_DIR"
+echo "Creating .user_gitconfig in $DOTFILES_DIR"
 touch $DOTFILES_DIR/.user_gitconfig
 
-echo -n "Configuration done. Boom."
+# create Go directory for GOPATH
+echo "Creating directory for GOPATH"
+touch $HOME/Go
+
+echo "Configuration done. Boom."
 

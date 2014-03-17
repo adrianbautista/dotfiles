@@ -1,0 +1,6 @@
+# Set GOPATH
+export GOPATH=$HOME/Go
+
+# Append Homebrew path before system bin
+export PATH=/usr/local/bin:$PATH:$GOPATH/bin
+
