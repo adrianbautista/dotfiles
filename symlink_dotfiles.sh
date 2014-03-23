@@ -39,7 +39,7 @@ touch $DOTFILES_DIR/.user_gitconfig
 
 # create Go directory for GOPATH
 echo "Creating directory for GOPATH"
-touch $HOME/Go
+mkdir -p $HOME/Go
 
 echo "Configuration done. Boom."
 
