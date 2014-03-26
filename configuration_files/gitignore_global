@@ -1,0 +1,33 @@
+# Logs and databases 
+*.log
+*.sql
+*.sqlite
+
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+
+# OS or Editor generated files
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.cache
+
+# VIM files
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+# Node.js package manager
+/node_modules
+/npm-debug.log
+
+# Ctags file
+tags
