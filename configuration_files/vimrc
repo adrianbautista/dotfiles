@@ -44,6 +44,15 @@ set wildchar=<Tab>
 " show line numbers
 set number
 
+" set cursor and gutter colors
+set cursorline
+highlight LineNr ctermbg=none
+highlight LineNr ctermfg=gray
+highlight CursorLine cterm=none ctermbg=236
+set lazyredraw " hack to let curosrline bg not redraw every scroll
+highlight CursorLineNr ctermfg=green ctermbg=240
+highlight SignColumn ctermbg=none
+
 " Fold using markers {{{
 " like this
 " }}}
