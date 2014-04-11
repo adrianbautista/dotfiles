@@ -11,7 +11,6 @@ Then execute the symlink script from the new dotfiles directory:
 
 ```shell
 cd ~/dotfiles
-chmod +x symlink_dotfiles.sh
 ./symlink_dotfiles.sh
 ```
 
@@ -26,4 +25,12 @@ export KEY=value
 [user]
   name = "Your Name"
   email = user@email.com
+```
+
+====
+
+If using homebrew on Mac OSX:
+
+```shell
+brew bundle ~/dotfiles/Brewfile
 ```
