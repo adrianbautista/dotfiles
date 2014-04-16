@@ -113,6 +113,10 @@ set scrolloff=5
 highlight ExtraWhitespace ctermbg=red
 match ExtraWhitespace /\s\+$/
 
+" don't deselect visual block after indent/unindent
+vnoremap < <gv
+vnoremap > >gv
+
 " auto-detect the filetype
 " has to be called after Vundle to work
 filetype plugin indent on
