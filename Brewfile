@@ -13,6 +13,7 @@ install tmux
 install reattach-to-user-namespace
 install ack
 install the_silver_searcher
+install tree
 
 # Install languages and databases
 install node
