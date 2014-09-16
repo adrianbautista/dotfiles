@@ -4,6 +4,11 @@
 # Update Brew
 update
 
+# Tap other sources for packages
+tap homebrew/versions
+tap homebrew/dupes
+tap homebrew/homebrew-completions
+
 # Install workspace packages
 install bash
 install bash-completion
@@ -30,8 +35,11 @@ install qt
 install phantomjs
 install imagemagick
 
-# Tap other sources for packages
-tap homebrew/versions
+# Install completions
+install rake-completion
+install bundler-completion
+install gem-completion
+install grunt-completion
 
 # Remove outdated versions from the cellar
 cleanup
