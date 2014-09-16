@@ -9,7 +9,6 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 Plugin 'kien/ctrlp.vim'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-haml'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'airblade/vim-gitgutter'
@@ -128,9 +127,6 @@ vnoremap > >gv
 filetype plugin indent on
 
 syntax enable
-" set background=dark
-" let g:solarized_termcolors = 256
-" colorscheme solarized
 
 " Always show the menu, insert longest match
 set completeopt=menuone,longest
