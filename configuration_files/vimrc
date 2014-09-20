@@ -7,7 +7,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
-
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-haml'
 Plugin 'kchmck/vim-coffee-script'
@@ -51,12 +50,13 @@ set number
 
 " set cursor and gutter colors
 set cursorline
-highlight LineNr ctermbg=none
-highlight LineNr ctermfg=gray
-highlight CursorLine cterm=none ctermbg=236
 set lazyredraw " hack to let curosrline bg not redraw every scroll
-highlight CursorLineNr ctermfg=green ctermbg=240
+
+highlight LineNr ctermfg=Gray
+highlight CursorLine cterm=none ctermbg=240
 highlight SignColumn ctermbg=none
+
+set t_Co=16
 
 " Fold using markers {{{
 " like this
