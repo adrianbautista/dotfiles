@@ -156,3 +156,10 @@ let g:multi_cursor_quit_key='<Esc>'
 
 " ack-vim
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" remove airline arrow separators
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+
+" use html binding with ejs
+au BufNewFile,BufRead *.ejs set filetype=html
