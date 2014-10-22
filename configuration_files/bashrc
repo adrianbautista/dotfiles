@@ -23,3 +23,8 @@
 if type "brew" &> /dev/null && [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
+
+if type "direnv" &> /dev/null; then
+  eval "$(direnv hook bash)"
+fi
+

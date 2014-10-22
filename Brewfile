@@ -20,6 +20,7 @@ install heroku-toolbelt
 install ack
 install the_silver_searcher
 install tree
+install direnv
 
 # Install languages and databases
 install node

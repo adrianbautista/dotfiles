@@ -1,4 +1,4 @@
-# Logs and databases 
+# Logs and databases
 *.log
 *.sql
 *.sqlite
@@ -31,3 +31,6 @@ Session.vim
 
 # Ctags file
 tags
+
+# direnv bin files
+.direnv
