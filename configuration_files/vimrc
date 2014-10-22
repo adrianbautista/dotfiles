@@ -163,3 +163,9 @@ let g:airline_right_sep=''
 
 " use html binding with ejs
 au BufNewFile,BufRead *.ejs set filetype=html
+
+" Ignore certain filetypes and directories in VIM
+set wildignore+=*.so,*.swp
+set wildignore+=tmp/**,log/**,**/source_maps/**
+set wildignore+=*.png,*.jpg,*.gif,*.pdf,*.dmg,*.zip
+
