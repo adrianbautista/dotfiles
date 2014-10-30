@@ -54,10 +54,10 @@ set cursorline
 set cursorcolumn
 set lazyredraw " hack to let curosrline bg not redraw every scroll
 
+highlight LineNr ctermfg=Gray
 highlight CursorLine cterm=none ctermbg=237
 highlight CursorColumn cterm=none ctermbg=237
-highlight CursorLineNr cterm=none ctermfg=Gray ctermbg=237
-highlight LineNr cterm=none ctermfg=Gray ctermbg=none
+highlight CursorLineNr ctermfg=Gray ctermbg=237
 highlight SignColumn ctermbg=none
 
 augroup CursorLine
