@@ -1,6 +1,7 @@
 # Logs and databases
 *.log
 *.sql
+!structure.sql
 *.sqlite
 
 # Numerous always-ignore extensions

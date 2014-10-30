@@ -46,16 +46,36 @@ set autoindent
 set wildchar=<Tab>
 
 " show line numbers
+set relativenumber
 set number
 
 " set cursor and gutter colors
 set cursorline
+set cursorcolumn
 set lazyredraw " hack to let curosrline bg not redraw every scroll
 
-highlight LineNr ctermfg=Gray
-highlight CursorLine cterm=none ctermbg=240
-highlight CursorLineNr ctermfg=Gray ctermbg=240
+highlight CursorLine cterm=none ctermbg=237
+highlight CursorColumn cterm=none ctermbg=237
+highlight CursorLineNr cterm=none ctermfg=Gray ctermbg=237
+highlight LineNr cterm=none ctermfg=Gray ctermbg=none
 highlight SignColumn ctermbg=none
+
+augroup CursorLine
+    au!
+    au VimEnter * setlocal cursorline
+    au WinEnter * setlocal cursorline
+    au BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+augroup END
+
+" hide vertical cursor when focus changes
+augroup CursorColumn
+    au!
+    au VimEnter * setlocal cursorcolumn
+    au WinEnter * setlocal cursorcolumn
+    au BufWinEnter * setlocal cursorcolumn
+    au WinLeave * setlocal nocursorcolumn
+augroup END
 
 set t_Co=16
 
@@ -146,7 +166,16 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 autocmd vimenter * if !argc() | NERDTree | endif
 
 " Custom key bindings
-:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+" Remove highlighted words with spacebar
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+" Cycle through files in buffer
+nnoremap gb :bn<CR>
+nnoremap gB :bp<CR>
+
+" Toggle relative line numbering
+nnoremap gn :set relativenumber!<CR>
 
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-g>'
@@ -166,6 +195,6 @@ au BufNewFile,BufRead *.ejs set filetype=html
 
 " Ignore certain filetypes and directories in VIM
 set wildignore+=*.so,*.swp
-set wildignore+=tmp/**,log/**,**/source_maps/**
-set wildignore+=*.png,*.jpg,*.gif,*.pdf,*.dmg,*.zip
+set wildignore+=tmp/**,log/**,**/source_maps/**,node_modules/**
+set wildignore+=*.png,*.jpg,*.jpeg,*.gif,*.pdf,*.dmg,*.zip
 
