@@ -167,15 +167,18 @@ autocmd vimenter * if !argc() | NERDTree | endif
 
 " Custom key bindings
 
+" Set <Leader>
+let mapleader=","
+
 " Remove highlighted words with spacebar
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Cycle through files in buffer
-nnoremap gb :bn<CR>
-nnoremap gB :bp<CR>
+nnoremap <Leader>b :bn<CR>
+nnoremap <Leader>B :bp<CR>
 
 " Toggle relative line numbering
-nnoremap gn :set relativenumber!<CR>
+nnoremap <Leader>n :set relativenumber!<CR>
 
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-g>'
