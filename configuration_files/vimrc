@@ -46,7 +46,6 @@ set autoindent
 set wildchar=<Tab>
 
 " show line numbers
-set relativenumber
 set number
 
 " set cursor and gutter colors
