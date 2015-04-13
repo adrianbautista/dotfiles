@@ -197,6 +197,6 @@ au BufNewFile,BufRead *.ejs set filetype=html
 
 " Ignore certain filetypes and directories in VIM
 set wildignore+=*.so,*.swp
-set wildignore+=tmp/**,log/**,**/source_maps/**,node_modules/**
+set wildignore+=tmp/**,log/**,*/source_maps/**,node_modules
 set wildignore+=*.png,*.jpg,*.jpeg,*.gif,*.pdf,*.dmg,*.zip
 
