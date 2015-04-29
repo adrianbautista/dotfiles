@@ -8,6 +8,7 @@ update
 tap homebrew/versions
 tap homebrew/dupes
 tap homebrew/homebrew-completions
+tap thoughtbot/formulae
 
 # Install workspace packages
 install bash
@@ -21,6 +22,7 @@ install ack
 install the_silver_searcher
 install tree
 install direnv
+install parity
 
 # Install languages and databases
 install node
