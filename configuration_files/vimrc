@@ -23,6 +23,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
 Plugin 'rizzatti/dash.vim'
 Plugin 'benmills/vimux'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 filetype plugin indent on
