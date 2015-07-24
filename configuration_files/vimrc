@@ -24,6 +24,7 @@ Plugin 'tpope/vim-bundler'
 Plugin 'rizzatti/dash.vim'
 Plugin 'benmills/vimux'
 Plugin 'mxw/vim-jsx'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on
@@ -200,6 +201,6 @@ au BufNewFile,BufRead *.ejs set filetype=html
 
 " Ignore certain filetypes and directories in VIM
 set wildignore+=*.so,*.swp
-set wildignore+=tmp/**,log/**,*/source_maps/**,node_modules
+set wildignore+=tmp/**,log/**,*/source_maps/**,node_modules,coverage
 set wildignore+=*.png,*.jpg,*.jpeg,*.gif,*.pdf,*.dmg,*.zip
 
