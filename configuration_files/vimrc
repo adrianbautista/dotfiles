@@ -25,6 +25,7 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'benmills/vimux'
 Plugin 'mxw/vim-jsx'
 Plugin 'fatih/vim-go'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 filetype plugin indent on
@@ -60,6 +61,7 @@ highlight CursorLine cterm=none ctermbg=237
 highlight CursorColumn cterm=none ctermbg=237
 highlight CursorLineNr ctermfg=Gray ctermbg=237
 highlight SignColumn ctermbg=none
+highlight Search ctermfg=237
 
 augroup CursorLine
     au!
@@ -203,4 +205,21 @@ au BufNewFile,BufRead *.ejs set filetype=html
 set wildignore+=*.so,*.swp
 set wildignore+=tmp/**,log/**,*/source_maps/**,node_modules,coverage
 set wildignore+=*.png,*.jpg,*.jpeg,*.gif,*.pdf,*.dmg,*.zip
+
+" Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['eslint']
+
+let g:syntastic_mode_map = {
+  \ "mode": "passive",
+  \ "active_filetypes": ['javascript'],
+  \ "passive_filetypes": [] }
 
