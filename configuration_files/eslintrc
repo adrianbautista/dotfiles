@@ -1,0 +1,11 @@
+{
+  "env": {
+    "browser": true,
+    "jquery": true,
+    "node": true
+  },
+  "rules": {
+    "indent": [2, 2],
+    "strict": 0
+  }
+}
