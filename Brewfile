@@ -1,48 +1,43 @@
 # Install packages via brew on a mac
-# brew bundle ~/dotfiles/Brewfile
-
-# Update Brew
-update
+# brew bundle --file=~/dotfiles/Brewfile
 
 # Tap other sources for packages
-tap homebrew/versions
-tap homebrew/dupes
-tap homebrew/homebrew-completions
-tap thoughtbot/formulae
+tap 'homebrew/versions'
+tap 'homebrew/dupes'
+tap 'homebrew/homebrew-completions'
+tap 'thoughtbot/formulae'
 
 # Install workspace packages
-install bash
-install bash-completion
-install git
-install hub
-install tmux
-install reattach-to-user-namespace
-install heroku-toolbelt
-install ack
-install the_silver_searcher
-install tree
-install direnv
-install parity
+brew 'bash'
+brew 'git'
+brew 'hub'
+brew 'tmux'
+brew 'reattach-to-user-namespace'
+brew 'heroku-toolbelt'
+brew 'ack'
+brew 'the_silver_searcher'
+brew 'tree'
+brew 'direnv'
+brew 'parity'
 
 # Install languages and databases
-install node
-install python
-install go
-install postgresql
-install mongodb
-install redis
-install memcached
+brew 'node'
+brew 'python'
+brew 'go'
+brew 'postgresql'
+brew 'mongodb'
+brew 'redis'
+brew 'memcached'
 
 # Install development packages
-install qt
-install phantomjs
-install imagemagick
+brew 'qt'
+brew 'phantomjs'
+brew 'imagemagick'
 
 # Install completions
-install rake-completion
-install bundler-completion
-install gem-completion
-install grunt-completion
+brew 'bash-completion'
+brew 'rake-completion'
+brew 'bundler-completion'
+brew 'gem-completion'
+brew 'grunt-completion'
 
-# Remove outdated versions from the cellar
-cleanup

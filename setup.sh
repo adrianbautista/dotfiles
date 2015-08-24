@@ -41,5 +41,11 @@ touch $DOTFILES_DIR/.user_gitconfig
 echo "Creating directory for GOPATH"
 mkdir -p $HOME/Go
 
+# install Vundle if Git is available
+if git --version &>/dev/null; then
+  echo "Installing Vundle for Vim plugin support"
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+
 echo "Configuration done. Boom."
 

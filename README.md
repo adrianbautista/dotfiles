@@ -11,13 +11,13 @@ Then execute the symlink script from the new dotfiles directory:
 
 ```shell
 cd ~/dotfiles
-./symlink_dotfiles.sh
+./setup.sh
 ```
 
 Edit the content of `.user_variables` and `.user_gitconfig` in the dotfiles directory to store sensitive user variables and keys:
 
 ```shell
-# EXAMPLE .user_variables 
+# EXAMPLE .user_variables
 export KEY=value
 ```
 ```shell
@@ -32,5 +32,6 @@ export KEY=value
 If using homebrew on Mac OSX:
 
 ```shell
-brew bundle ~/dotfiles/Brewfile
+brew tap Homebrew/bundle
+brew bundle --file=~/dotfiles/Brewfile
 ```
