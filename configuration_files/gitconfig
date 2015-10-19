@@ -35,3 +35,5 @@
   merge = refs/heads/master
 [core]
   excludesfile = ~/.gitignore_global
+[remote "origin"]
+  prune = true
