@@ -5,7 +5,14 @@
 [[ -s "$HOME/.bash_path" ]] && source "$HOME/.bash_path"
 
 # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+if which rvm > /dev/null; then
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+fi
+
+# Load rbenv
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
 
 # This loads NVM
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
