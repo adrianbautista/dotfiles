@@ -26,6 +26,7 @@ Plugin 'benmills/vimux'
 Plugin 'mxw/vim-jsx'
 Plugin 'fatih/vim-go'
 Plugin 'scrooloose/syntastic'
+Plugin 'junegunn/vim-easy-align'
 
 call vundle#end()
 filetype plugin indent on
@@ -203,7 +204,12 @@ au BufNewFile,BufRead *.ejs set filetype=html
 
 " Ignore certain filetypes and directories in VIM
 set wildignore+=*.so,*.swp
-set wildignore+=tmp/**,log/**,*/source_maps/**,node_modules,coverage
+set wildignore+=*/tmp/*,*/log/*,
+set wildignore+=*/source_maps/*
+set wildignore+=.git,.gitkeep,.keep
+set wildignore+=*/node_modules/*
+set wildignore+=*/vendor/ruby/*,*/vendor/assets/*
+set wildignore+=.coverage
 set wildignore+=*.png,*.jpg,*.jpeg,*.gif,*.pdf,*.dmg,*.zip
 
 " Syntastic settings
