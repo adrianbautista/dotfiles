@@ -7,7 +7,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
-Plugin 'kien/ctrlp.vim'
+" Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-haml'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'airblade/vim-gitgutter'
@@ -229,3 +229,6 @@ let g:syntastic_mode_map = {
   \ "active_filetypes": ['javascript'],
   \ "passive_filetypes": [] }
 
+" fzf settings
+set rtp+=/usr/local/opt/fzf
+nnoremap <C-p> :FZF<CR>
