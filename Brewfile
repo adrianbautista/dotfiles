@@ -19,6 +19,7 @@ brew 'the_silver_searcher'
 brew 'tree'
 brew 'direnv'
 brew 'parity'
+brew 'fzf'
 
 # Install languages and databases
 brew 'node'
@@ -40,4 +41,3 @@ brew 'rake-completion'
 brew 'bundler-completion'
 brew 'gem-completion'
 brew 'grunt-completion'
-
