@@ -19,10 +19,10 @@ brew 'the_silver_searcher'
 brew 'tree'
 brew 'direnv'
 brew 'parity'
-brew 'fzf'
+# brew 'fzf'
 
 # Install languages and databases
-brew 'node'
+# brew 'node'
 brew 'python'
 brew 'go'
 brew 'postgresql'
