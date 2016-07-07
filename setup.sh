@@ -38,14 +38,14 @@ echo "Creating .user_gitconfig in $DOTFILES_DIR"
 touch $DOTFILES_DIR/.user_gitconfig
 
 # create Go directory for GOPATH
-echo "Creating directory for GOPATH"
-mkdir -p $HOME/Go
+# echo "Creating directory for GOPATH"
+# mkdir -p $HOME/Go
 
 # install Vundle if Git is available
-if git --version &>/dev/null; then
-  echo "Installing Vundle for Vim plugin support"
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
+# if git --version &>/dev/null; then
+#   echo "Installing Vundle for Vim plugin support"
+#   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# fi
 
 echo "Configuration done. Boom."
 
