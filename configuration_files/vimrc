@@ -204,7 +204,7 @@ au BufNewFile,BufRead *.ejs set filetype=html
 
 " Ignore certain filetypes and directories in VIM
 set wildignore+=*.so,*.swp
-set wildignore+=*/tmp/*,*/log/*,
+set wildignore+=*/tmp/*,*/log/*
 set wildignore+=*/source_maps/*
 set wildignore+=.git,.gitkeep,.keep
 set wildignore+=*/node_modules/*
