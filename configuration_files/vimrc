@@ -27,6 +27,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'fatih/vim-go'
 Plugin 'scrooloose/syntastic'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'JazzCore/ctrlp-cmatcher'
 
 call vundle#end()
 filetype plugin indent on
@@ -228,6 +229,8 @@ let g:syntastic_mode_map = {
   \ "mode": "passive",
   \ "active_filetypes": ['javascript'],
   \ "passive_filetypes": [] }
+
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " fzf settings
 " set rtp+=/usr/local/opt/fzf
