@@ -8,8 +8,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-haml'
-Plugin 'kchmck/vim-coffee-script'
+" Plugin 'tpope/vim-haml'
+" Plugin 'kchmck/vim-coffee-script'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-multiple-cursors'
@@ -21,13 +21,14 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
-Plugin 'rizzatti/dash.vim'
+" Plugin 'rizzatti/dash.vim'
 Plugin 'benmills/vimux'
 Plugin 'mxw/vim-jsx'
-Plugin 'fatih/vim-go'
+" Plugin 'fatih/vim-go'
 Plugin 'scrooloose/syntastic'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'JazzCore/ctrlp-cmatcher'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -46,6 +47,11 @@ set expandtab
 
 " guess indentation
 set autoindent
+
+augroup DiffentTabSizes
+  autocmd!
+  autocmd Filetype scss setlocal ts=4 sw=4 sts=0 expandtab
+augroup END
 
 " Expand the command line using tab
 set wildchar=<Tab>
