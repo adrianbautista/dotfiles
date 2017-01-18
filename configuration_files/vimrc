@@ -10,7 +10,6 @@ call vundle#begin()
 " Plugin 'fatih/vim-go'
 " Plugin 'junegunn/vim-easy-align'
 " Plugin 'kchmck/vim-coffee-script'
-" Plugin 'mattn/emmet-vim'
 " Plugin 'mxw/vim-jsx'
 " Plugin 'rizzatti/dash.vim'
 " Plugin 'scrooloose/syntastic'
@@ -23,6 +22,7 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'gmarik/vundle'
 Plugin 'JazzCore/ctrlp-cmatcher'
 Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
@@ -82,7 +82,10 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
+let g:gitgutter_override_sign_column_highlight = 0
+
 highlight LineNr ctermbg=none
+highlight SignColumn ctermbg=none
 " highlight CursorLine cterm=none ctermbg=237
 " highlight CursorColumn cterm=none ctermbg=237
 " highlight CursorLineNr ctermfg=Gray ctermbg=237
@@ -93,7 +96,6 @@ highlight LineNr ctermbg=none
 " highlight CursorLine cterm=none ctermbg=DarkGray
 " highlight CursorColumn cterm=none ctermbg=DarkGray
 " highlight CursorLineNr ctermfg=LightGray ctermbg=DarkGray
-" highlight SignColumn ctermbg=none
 " highlight Search ctermfg=DarkGray
 
 " highlight extra whitespace
