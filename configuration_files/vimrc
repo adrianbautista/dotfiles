@@ -1,5 +1,5 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible							" be iMproved, required
+filetype off									" required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle.vim/
@@ -55,8 +55,8 @@ set expandtab
 set autoindent
 
 augroup DiffentTabSizes
-  autocmd!
-  autocmd Filetype scss setlocal ts=4 sw=4 sts=0 expandtab
+	autocmd!
+	autocmd Filetype scss setlocal ts=4 sw=4 sts=0 expandtab
 augroup END
 
 " Expand the command line using tab
@@ -72,14 +72,14 @@ set lazyredraw " hack to let curosrline bg not redraw every scroll
 
 " set termguicolors
 " if filereadable(expand("~/.vimrc_background"))
-"   " set t_Co=256
-"   let base16colorspace=256
-"   source ~/.vimrc_background
-"   " colorscheme base16-tomorrow-night
+"		" set t_Co=256
+"		let base16colorspace=256
+"		source ~/.vimrc_background
+"		" colorscheme base16-tomorrow-night
 " endif
 if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
+	let base16colorspace=256
+	source ~/.vimrc_background
 endif
 
 let g:gitgutter_override_sign_column_highlight = 0
@@ -103,20 +103,20 @@ highlight ExtraWhitespace ctermbg=red
 match ExtraWhitespace /\s\+$/
 
 augroup CursorLine
-    au!
-    au VimEnter * setlocal cursorline
-    au WinEnter * setlocal cursorline
-    au BufWinEnter * setlocal cursorline
-    au WinLeave * setlocal nocursorline
+		au!
+		au VimEnter * setlocal cursorline
+		au WinEnter * setlocal cursorline
+		au BufWinEnter * setlocal cursorline
+		au WinLeave * setlocal nocursorline
 augroup END
 
 " hide vertical cursor when focus changes
 augroup CursorColumn
-    au!
-    au VimEnter * setlocal cursorcolumn
-    au WinEnter * setlocal cursorcolumn
-    au BufWinEnter * setlocal cursorcolumn
-    au WinLeave * setlocal nocursorcolumn
+		au!
+		au VimEnter * setlocal cursorcolumn
+		au WinEnter * setlocal cursorcolumn
+		au BufWinEnter * setlocal cursorcolumn
+		au WinLeave * setlocal nocursorcolumn
 augroup END
 
 " Fold using markers {{{
@@ -187,9 +187,9 @@ set completeopt=menuone,longest
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
 autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal g`\"" |
-  \ endif
+	\ if line("'\"") > 0 && line("'\"") <= line("$") |
+	\		exe "normal g`\"" |
+	\ endif
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
@@ -253,11 +253,18 @@ set wildignore+=*.png,*.jpg,*.jpeg,*.gif,*.pdf,*.dmg,*.zip
 " let g:syntastic_javascript_checkers = ['eslint']
 
 " let g:syntastic_mode_map = {
-"   \ "mode": "passive",
-"   \ "active_filetypes": ['javascript'],
-"   \ "passive_filetypes": [] }
+"		\ "mode": "passive",
+"		\ "active_filetypes": ['javascript'],
+"		\ "passive_filetypes": [] }
 
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+let g:ctrlp_max_files = 50000
+
+if executable('rg')
+	set grepprg=rg\ --color=never
+	let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+	let g:ctrlp_use_caching = 0
+endif
 
 " fzf settings
 " set rtp+=/usr/local/opt/fzf
