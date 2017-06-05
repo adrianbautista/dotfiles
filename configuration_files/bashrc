@@ -35,7 +35,7 @@ fi
 #   eval "$(direnv hook bash)"
 # fi
 
-# source /opt/boxen/env.sh
+source "$HOME/.bootstrap/env.sh"
 
 # Base-16 coloring
 BASE16_SHELL=$HOME/.config/base16-shell/

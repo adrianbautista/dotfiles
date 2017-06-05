@@ -1,7 +1,7 @@
 [include]
   path = ~/dotfiles/.user_gitconfig ;
 [credential]
-  helper = /opt/boxen/bin/boxen-git-credential
+  helper = cache --timeout 3600
 [alias]
   st = status
   ci = commit
@@ -34,7 +34,7 @@
   remote = origin
   merge = refs/heads/master
 [core]
-  excludesfile = /opt/boxen/config/git/gitignore
+  excludesfile = ~/.gitignore_global
 [remote "origin"]
   prune = true
 [hub]

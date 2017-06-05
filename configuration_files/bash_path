@@ -2,7 +2,7 @@
 export GOPATH=$HOME/Go
 
 # Append Homebrew path before system bin
-export PATH=/usr/local/bin:$PATH:$GOPATH/bin
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$GOPATH/bin
 
 # Add RVM to PATH for scripting
 if which rvm > /dev/null; then
