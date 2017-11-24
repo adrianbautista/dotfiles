@@ -2,7 +2,7 @@
 branches = STDIN.read.chomp
 if !branches.empty?
   branch = branches.split("\n").map(&:strip)[0].split(' ').map(&:strip)[-1]
-  is_clean = branches.include?("nothing to commit, working directory clean")
+  is_clean = branches.include?("nothing to commit, working tree clean")
   if !branches.empty?
     if is_clean
       puts " ✓ #{branch}"
