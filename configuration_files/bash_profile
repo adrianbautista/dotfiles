@@ -1,2 +1,4 @@
 # Load bashrc in Mac Environment
 [[ -s "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
+
+[ -f ~/.bashrc ] && source ~/.bashrc
