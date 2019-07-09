@@ -1,4 +1,4 @@
-#Usage
+# Usage
 
 Clone the repo into your home directory:
 
@@ -32,6 +32,5 @@ export KEY=value
 If using homebrew on Mac OSX:
 
 ```shell
-brew tap Homebrew/bundle
 brew bundle --file=~/dotfiles/Brewfile
 ```
