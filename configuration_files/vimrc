@@ -7,37 +7,43 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-haml'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'airblade/vim-gitgutter'
+Plugin 'mileszs/ack.vim'
+
+Plugin 'chriskempson/base16-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'airblade/vim-gitgutter'
+
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'scrooloose/nerdtree'
-Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-bundler'
-Plugin 'rizzatti/dash.vim'
-Plugin 'benmills/vimux'
+Plugin 'suy/vim-context-commentstring'
+
+Plugin 'tpope/vim-haml'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'fatih/vim-go'
-Plugin 'scrooloose/syntastic'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'elixir-editors/vim-elixir'
-Plugin 'chriskempson/base16-vim'
-Plugin 'dermusikman/sonicpi.vim'
-Plugin 'suy/vim-context-commentstring'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'leafgarland/typescript-vim.git'
 
 call vundle#end()
+
+" auto-detect the filetype
 filetype plugin indent on
+
+" enable syntax highlighting
+syntax enable
+
+" use html filetype with ejs
+au BufNewFile,BufRead *.ejs setfiletype html
+
+" use JSON filetype with JSON-LD
+au BufNewFile,BufRead *.jsonld setfiletype json
+
+" Set <Leader>
+let mapleader=","
 
 " Wrap too long lines
 set wrap
@@ -60,56 +66,10 @@ set wildchar=<Tab>
 " show line numbers
 set number
 
-" set cursor and gutter colors
-set cursorline
-set cursorcolumn
-set lazyredraw " hack to let curosrline bg not redraw every scroll
-
-" set background=dark
-"
-
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
-
-" vim airline settings
-set laststatus=2
-" remove airline arrow separators
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-
-let g:gitgutter_override_sign_column_highlight = 0
-
-" NOT WORKING?
-" highlight extra whitespace
-" highlight ExtraWhitespace ctermbg=green
-" match ExtraWhitespace /\s\+$/
-
-augroup CursorLine
-    au!
-    au VimEnter * setlocal cursorline
-    au WinEnter * setlocal cursorline
-    au BufWinEnter * setlocal cursorline
-    au WinLeave * setlocal nocursorline
-augroup END
-
-" hide vertical cursor when focus changes
-augroup CursorColumn
-    au!
-    au VimEnter * setlocal cursorcolumn
-    au WinEnter * setlocal cursorcolumn
-    au BufWinEnter * setlocal cursorcolumn
-    au WinLeave * setlocal nocursorcolumn
-augroup END
-
 " Fold using markers {{{
 " like this
 " }}}
 set foldmethod=marker
-
-" enable all features
-set nocompatible
 
 " powerful backspaces
 set backspace=indent,eol,start
@@ -156,21 +116,52 @@ set ttyfast
 set mouse=a
 set ttymouse=xterm2
 
+" For completion menu: always show the menu, insert longest match
+set completeopt=menuone,longest
+
 " leave a 5 line buffer when scrolling
 set scrolloff=5
 
-" don't deselect visual block after indent/unindent
-vnoremap < <gv
-vnoremap > >gv
+" set cursor and gutter colors
+set cursorline
+set cursorcolumn
+set lazyredraw " hack to let curosrline bg not redraw every scroll
 
-" auto-detect the filetype
-" has to be called after Vundle to work
-filetype plugin indent on
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
-syntax enable
+" vim airline settings
+set laststatus=2
+" remove airline arrow separators
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
-" Always show the menu, insert longest match
-set completeopt=menuone,longest
+let g:gitgutter_override_sign_column_highlight = 0
+
+" NOT WORKING?
+" highlight extra whitespace
+" highlight ExtraWhitespace ctermbg=green
+" match ExtraWhitespace /\s\+$/
+
+" hide line cursor when focus changes
+augroup CursorLine
+    au!
+    au VimEnter * setlocal cursorline
+    au WinEnter * setlocal cursorline
+    au BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+augroup END
+
+" hide vertical cursor when focus changes
+augroup CursorColumn
+    au!
+    au VimEnter * setlocal cursorcolumn
+    au WinEnter * setlocal cursorcolumn
+    au BufWinEnter * setlocal cursorcolumn
+    au WinLeave * setlocal nocursorcolumn
+augroup END
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -180,15 +171,10 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
-" NERDTree
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-autocmd vimenter * if !argc() | NERDTree | endif
 
-" Custom key bindings
-
-" Set <Leader>
-let mapleader=","
+" don't deselect visual block after indent/unindent
+vnoremap < <gv
+vnoremap > >gv
 
 " Remove highlighted words with spacebar
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
@@ -200,17 +186,6 @@ nnoremap <Leader>B :bp<CR>
 " Toggle relative line numbering
 nnoremap <Leader>n :set relativenumber!<CR>
 
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_next_key='<C-g>'
-let g:multi_cursor_prev_key='<C-h>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
-
-" use html filetype with ejs
-au BufNewFile,BufRead *.ejs setfiletype html
-" use JSON filetype with JSON-LD
-au BufNewFile,BufRead *.jsonld setfiletype json
-
 " Ignore certain filetypes and directories in VIM
 set wildignore+=*.so,*.swp
 set wildignore+=*/tmp/*,*/log/*,
@@ -221,23 +196,16 @@ set wildignore+=*/vendor/ruby/*,*/vendor/assets/*
 set wildignore+=.coverage
 set wildignore+=*.png,*.jpg,*.jpeg,*.gif,*.pdf,*.dmg,*.zip
 
-" Syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" ===============
+" PLUGIN SETTINGS
+" ===============
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd vimenter * if !argc() | NERDTree | endif
 
-let g:syntastic_javascript_checkers = ['eslint']
-
-let g:syntastic_mode_map = {
-  \ "mode": "passive",
-  \ "active_filetypes": ['javascript'],
-  \ "passive_filetypes": [] }
-
+" Ripgrep for CTRLP and Ack
 if executable('rg')
   set grepprg=rg\ --color=never
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
@@ -246,10 +214,13 @@ if executable('rg')
   let g:ackprg = 'rg -S --vimgrep --no-heading'
 endif
 
+" Multi-Cursor settings
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-g>'
+let g:multi_cursor_prev_key='<C-h>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+" Default to JSX highlighting
 let g:jsx_ext_required = 0
 
-" sonic pi settings
-let g:sonicpi_command = 'sonic-pi-tool'
-let g:sonicpi_send = 'eval-stdin'
-let g:sonicpi_stop = 'stop'
-let g:vim_redraw = 1
