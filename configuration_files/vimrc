@@ -11,7 +11,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-haml'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mileszs/ack.vim'
@@ -29,6 +30,11 @@ Plugin 'fatih/vim-go'
 Plugin 'scrooloose/syntastic'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'elixir-editors/vim-elixir'
+Plugin 'chriskempson/base16-vim'
+Plugin 'dermusikman/sonicpi.vim'
+Plugin 'suy/vim-context-commentstring'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'leafgarland/typescript-vim.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -59,12 +65,26 @@ set cursorline
 set cursorcolumn
 set lazyredraw " hack to let curosrline bg not redraw every scroll
 
-highlight LineNr ctermfg=Gray
-highlight CursorLine cterm=none ctermbg=237
-highlight CursorColumn cterm=none ctermbg=237
-highlight CursorLineNr ctermfg=Gray ctermbg=237
-highlight SignColumn ctermbg=none
-highlight Search ctermfg=237
+" set background=dark
+"
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
+" vim airline settings
+set laststatus=2
+" remove airline arrow separators
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+
+let g:gitgutter_override_sign_column_highlight = 0
+
+" NOT WORKING?
+" highlight extra whitespace
+" highlight ExtraWhitespace ctermbg=green
+" match ExtraWhitespace /\s\+$/
 
 augroup CursorLine
     au!
@@ -82,8 +102,6 @@ augroup CursorColumn
     au BufWinEnter * setlocal cursorcolumn
     au WinLeave * setlocal nocursorcolumn
 augroup END
-
-set t_Co=16
 
 " Fold using markers {{{
 " like this
@@ -140,10 +158,6 @@ set ttymouse=xterm2
 
 " leave a 5 line buffer when scrolling
 set scrolloff=5
-
-" highlight extra whitespace
-highlight ExtraWhitespace ctermbg=red
-match ExtraWhitespace /\s\+$/
 
 " don't deselect visual block after indent/unindent
 vnoremap < <gv
@@ -242,3 +256,9 @@ let g:jsx_ext_required = 0
 " fzf settings
 " set rtp+=/usr/local/opt/fzf
 " nnoremap <C-p> :FZF<CR>
+
+" sonic pi settings
+let g:sonicpi_command = 'sonic-pi-tool'
+let g:sonicpi_send = 'eval-stdin'
+let g:sonicpi_stop = 'stop'
+let g:vim_redraw = 1
