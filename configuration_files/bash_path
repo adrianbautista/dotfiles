@@ -1,10 +1,9 @@
-# Set GOPATH
-export GOPATH=$HOME/Go
-
 # Append Homebrew path before system bin
-export PATH=/usr/local/bin:$PATH:$GOPATH/bin
+export PATH="/usr/local/bin:$PATH"
 
-# Add RVM to PATH for scripting
-if which rvm > /dev/null; then
-  PATH=$PATH:$HOME/.rvm/bin
-fi
+# Set GOPATH and append
+export GOPATH="$HOME/Go"
+export PATH="$PATH:$GOPATH/bin"
+
+# Append Rust path
+export PATH="$PATH:$HOME/.cargo/bin"
