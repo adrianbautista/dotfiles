@@ -206,17 +206,10 @@ let g:multi_cursor_prev_key='<C-h>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-" ack-vim
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
-" vim airline settings
-set laststatus=2
-" remove airline arrow separators
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-
-" use html binding with ejs
-au BufNewFile,BufRead *.ejs set filetype=html
+" use html filetype with ejs
+au BufNewFile,BufRead *.ejs setfiletype html
+" use JSON filetype with JSON-LD
+au BufNewFile,BufRead *.jsonld setfiletype json
 
 " Ignore certain filetypes and directories in VIM
 set wildignore+=*.so,*.swp
@@ -249,13 +242,11 @@ if executable('rg')
   set grepprg=rg\ --color=never
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
+
+  let g:ackprg = 'rg -S --vimgrep --no-heading'
 endif
 
 let g:jsx_ext_required = 0
-
-" fzf settings
-" set rtp+=/usr/local/opt/fzf
-" nnoremap <C-p> :FZF<CR>
 
 " sonic pi settings
 let g:sonicpi_command = 'sonic-pi-tool'
