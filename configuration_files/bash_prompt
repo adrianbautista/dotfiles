@@ -16,7 +16,7 @@ function branch
 echo "----------------------------------------------------------------"
 echo "$(git --version)"
 echo "$(ruby -v)"
-echo "$(rails -v)"
 echo "node $(node -v)"
+echo "$(python -V)"
 echo "----------------------------------------------------------------"
 PS1="$txtylw\w$txtgrn\$(branch)$txtred †$txtrst "
