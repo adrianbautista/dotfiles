@@ -138,12 +138,15 @@ set laststatus=2
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
-let g:gitgutter_override_sign_column_highlight = 0
+" Disable colorscheme background, so defaults to terminal
+let g:gitgutter_override_sign_column_highlight=0
+highlight Normal ctermbg=none guibg=none
+highlight SignColumn ctermbg=none guibg=none
+highlight LineNr ctermbg=none guibg=none
 
-" NOT WORKING?
-" highlight extra whitespace
-" highlight ExtraWhitespace ctermbg=green
-" match ExtraWhitespace /\s\+$/
+" highlight extra whitespace in red
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
 
 " hide line cursor when focus changes
 augroup CursorLine
