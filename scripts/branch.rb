@@ -5,7 +5,7 @@ if !branches.empty?
   is_clean = branches.include?("nothing to commit, working tree clean")
   if !branches.empty?
     if is_clean
-      puts " ✓ #{branch}"
+      puts " ✔︎ #{branch}"
     else
       puts "\e[0;31m" + " ✗ #{branch}"
     end
