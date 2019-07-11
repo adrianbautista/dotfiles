@@ -47,5 +47,5 @@ if git --version &>/dev/null; then
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
-echo "Configuration done. Boom."
+echo "Configuration done. Boom. Now set a terminal and shell color scheme with: base16_THEME_NAME"
 
