@@ -1,3 +1,9 @@
+### Dependencies
+
+- [base16-shell](https://github.com/chriskempson/base16-shell) (included in repo as submodule)
+- [Vim Plug](https://github.com/junegunn/vim-plug)
+- [XVim2](https://github.com/XVimProject/XVim2) (included as submodule for XCode Vim keybindings)
+
 # Usage
 
 Clone the repo into your home directory:
@@ -27,7 +33,7 @@ export KEY=value
   email = user@email.com
 ```
 
-====
+---
 
 If using homebrew on Mac OSX:
 

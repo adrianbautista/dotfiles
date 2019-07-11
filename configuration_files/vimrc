@@ -1,40 +1,29 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle.vim/
-call vundle#begin()
+" Vim Plug
+call plug#begin('~/.vim/bundle')
+Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
+Plug 'mileszs/ack.vim'
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/vundle'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'mileszs/ack.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
 
-Plugin 'chriskempson/base16-vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'airblade/vim-gitgutter'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-commentary'
+Plug 'suy/vim-context-commentstring'
 
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-commentary'
-Plugin 'suy/vim-context-commentstring'
-
-Plugin 'tpope/vim-haml'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'leafgarland/typescript-vim.git'
-
-call vundle#end()
-
-" auto-detect the filetype
-filetype plugin indent on
-
-" enable syntax highlighting
-syntax enable
+Plug 'tpope/vim-haml'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'leafgarland/typescript-vim'
+call plug#end()
 
 " use html filetype with ejs
 au BufNewFile,BufRead *.ejs setfiletype html

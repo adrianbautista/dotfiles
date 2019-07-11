@@ -42,10 +42,12 @@ echo "Creating directory for GOPATH"
 mkdir -p $HOME/Go
 
 # install Vundle if Git is available
-if git --version &>/dev/null; then
-  echo "Installing Vundle for Vim plugin support"
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [[ ! -d "$HOME/.vim/autoload/plug.vim" ]]; then
+  echo "Installing Vim Plug to ~/.vim/autoload/plug.vim for plugin support"
+
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-echo "Configuration done. Boom. Now set a terminal and shell color scheme with: base16_THEME_NAME"
+echo "Configuration done. Boom. Now set a terminal and shell color scheme with: base17_THEME_NAME"
 
