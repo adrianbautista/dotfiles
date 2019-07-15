@@ -41,7 +41,7 @@ touch $DOTFILES_DIR/.user_gitconfig
 echo "Creating directory for GOPATH"
 mkdir -p $HOME/Go
 
-# install Vundle if Git is available
+# install Vim Plug if not present already
 if [[ ! -d "$HOME/.vim/autoload/plug.vim" ]]; then
   echo "Installing Vim Plug to ~/.vim/autoload/plug.vim for plugin support"
 
@@ -49,5 +49,7 @@ if [[ ! -d "$HOME/.vim/autoload/plug.vim" ]]; then
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-echo "Configuration done. Boom. Now set a terminal and shell color scheme with: base17_THEME_NAME"
+echo "Configuration done. Boom."
+echo "Now set a terminal and shell color scheme with: base17_THEME_NAME"
+echo "And install plugins in vim by running: :PlugInstall"
 
