@@ -42,3 +42,5 @@ brew 'youtube-dl'
 # Cask app installs
 cask 'docker'
 cask 'arduino'
+cask 'devdocs'
+cask 'alfred'
