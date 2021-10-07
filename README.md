@@ -10,7 +10,7 @@ Clone the repo into your home directory:
 
 ```shell
 cd ~
-git clone https://github.com/adrianbautista/dotfiles.git
+git clone --recurse-submodules https://github.com/adrianbautista/dotfiles.git
 ```
 
 Then execute the symlink script from the new dotfiles directory:

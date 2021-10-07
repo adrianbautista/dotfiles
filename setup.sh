@@ -37,10 +37,6 @@ touch $DOTFILES_DIR/.user_variables
 echo "Creating .user_gitconfig in $DOTFILES_DIR"
 touch $DOTFILES_DIR/.user_gitconfig
 
-# create Go directory for GOPATH
-echo "Creating directory for GOPATH"
-mkdir -p $HOME/Go
-
 # install Vim Plug if not present already
 if [[ ! -d "$HOME/.vim/autoload/plug.vim" ]]; then
   echo "Installing Vim Plug to ~/.vim/autoload/plug.vim for plugin support"
@@ -50,6 +46,6 @@ if [[ ! -d "$HOME/.vim/autoload/plug.vim" ]]; then
 fi
 
 echo "Configuration done. Boom."
-echo "Now set a terminal and shell color scheme with: base17_THEME_NAME"
+echo "Now set a terminal and shell color scheme with: base16_THEME_NAME"
 echo "And install plugins in vim by running: :PlugInstall"
 

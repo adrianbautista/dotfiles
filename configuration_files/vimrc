@@ -18,11 +18,13 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
 Plug 'suy/vim-context-commentstring'
 
-Plug 'tpope/vim-haml'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'leafgarland/typescript-vim'
+Plug 'slim-template/vim-slim'
+
+" Plug 'tpope/vim-haml'
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
+" Plug 'mustache/vim-mustache-handlebars'
+" Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 " use html filetype with ejs
@@ -197,14 +199,14 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 autocmd vimenter * if !argc() | NERDTree | endif
 
-" Ripgrep for CTRLP and Ack
-if executable('rg')
-  set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  let g:ctrlp_use_caching = 0
+ " Ripgrep for CTRLP and Ack
+ if executable('rg')
+   set grepprg=rg\ --color=never
+   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+   let g:ctrlp_use_caching = 0
 
-  let g:ackprg = 'rg -S --vimgrep --no-heading'
-endif
+   let g:ackprg = 'rg -S --vimgrep --no-heading'
+ endif
 
 " Multi-Cursor settings
 let g:multi_cursor_use_default_mapping=0
@@ -214,5 +216,5 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " Default to JSX highlighting
-let g:jsx_ext_required = 0
+" let g:jsx_ext_required = 0
 

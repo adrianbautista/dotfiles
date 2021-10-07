@@ -1,1 +1,4 @@
 export EDITOR='vim'
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl)"
+export NODE_CONFIGURE_OPTS="--shared-openssl-libpath=$(brew --prefix openssl)"
+
