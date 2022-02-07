@@ -40,3 +40,9 @@ If using homebrew on Mac OSX:
 ```shell
 brew bundle --file=~/dotfiles/Brewfile
 ```
+
+Link the completions
+
+```shell
+brew completions link
+```

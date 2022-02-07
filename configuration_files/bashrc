@@ -24,11 +24,6 @@ if which jenv > /dev/null; then
   eval "$(jenv init -)"
 fi
 
-# Load direnv
-if type "direnv" &> /dev/null; then
-  eval "$(direnv hook bash)"
-fi
-
 # Configure base16 colorscheme
 BASE16_SHELL="$HOME/dotfiles/addons/base16-shell/"
 [ -n "$PS1" ] && [ -s "$BASE16_SHELL/profile_helper.sh" ] && eval "$("$BASE16_SHELL/profile_helper.sh")"
@@ -53,4 +48,8 @@ if type brew &>/dev/null; then
   then
     source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
   fi
+
+  __git_complete g __git_main
 fi
+
+. "$HOME/.cargo/env"

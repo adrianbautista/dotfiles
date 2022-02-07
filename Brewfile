@@ -4,43 +4,58 @@
 # Set cask install directory
 cask_args appdir: "/Applications"
 
-# Tap other sources for packages
-tap 'homebrew/cask'
-tap 'homebrew/services'
 tap 'heroku/brew'
 tap 'thoughtbot/formulae'
 
 brew 'bash'
 brew 'git'
+brew 'heroku'
 brew 'hub'
-brew 'tmux'
+brew 'postgresql'
 brew 'reattach-to-user-namespace'
+brew 'redis'
+brew 'tmux'
+brew 'tree'
+
+brew 'rbenv'
+brew 'nodenv'
+brew 'pyenv'
+
+cask 'alfred'
+cask 'dropbox'
+cask 'figma'
+cask 'firefox'
+cask 'iterm2'
+cask 'itsycal'
+cask 'slack'
+cask 'visual-studio-code'
+
+# tmux, postgresql, ripgrep failed
+
+# Tap other sources for packages
+# tap 'homebrew/cask'
+# tap 'homebrew/services'
+
+# brew 'ripgrep'
 
 # Languages
-brew 'rbenv'
-brew 'ruby-build'
-brew 'nodenv'
-brew 'node-build'
-brew 'pyenv'
-brew 'pipenv'
-brew 'direnv'
+# brew 'ruby-build'
+# brew 'node-build'
+# brew 'pipenv' # not recommended by homebrew anymore
+# brew 'direnv'
 
 # Databases
-brew 'postgresql'
+# brew 'unrar'
+# brew 'ack'
+# brew 'parity'
+# brew 'unrar'
 
-brew 'ripgrep'
-brew 'tree'
-brew 'unrar'
-brew 'ack'
-brew 'heroku'
-brew 'parity'
-brew 'unrar'
-
-brew 'ffmpeg'
-brew 'youtube-dl'
+# brew 'ffmpeg'
+# brew 'youtube-dl'
 
 # Cask app installs
-cask 'docker'
-cask 'arduino'
-cask 'devdocs'
-cask 'alfred'
+# cask 'docker'
+# cask 'arduino'
+# cask 'devdocs'
+# cask 'lulu'
+# cask 'notion'

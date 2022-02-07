@@ -37,3 +37,5 @@
   excludesfile = ~/.gitignore_global
 [remote "origin"]
   prune = true
+[init]
+	defaultBranch = main

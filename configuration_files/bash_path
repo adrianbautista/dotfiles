@@ -1,12 +1,2 @@
 # Append Homebrew path before system bin
 export PATH="/usr/local/bin:$PATH"
-
-# Set GOPATH and append
-export GOPATH="$HOME/Go"
-export PATH="$PATH:$GOPATH/bin"
-
-# Append Rust path
-export PATH="$PATH:$HOME/.cargo/bin"
-
-# Append jenv path
-export PATH="$HOME/.jenv/bin:$PATH"
