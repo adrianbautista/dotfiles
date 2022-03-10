@@ -19,15 +19,6 @@ Plug 'tpope/vim-commentary'
 Plug 'suy/vim-context-commentstring'
 
 Plug 'slim-template/vim-slim'
-
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-
-" Plug 'tpope/vim-haml'
-" Plug 'pangloss/vim-javascript'
-" Plug 'mxw/vim-jsx'
-" Plug 'mustache/vim-mustache-handlebars'
-" Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 " use html filetype with ejs
@@ -218,7 +209,3 @@ let g:multi_cursor_next_key='<C-g>'
 let g:multi_cursor_prev_key='<C-h>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
-
-" Default to JSX highlighting
-" let g:jsx_ext_required = 0
-
