@@ -1,28 +1,11 @@
 # Load user specific variables and API KEYS
 [[ -s "$HOME/dotfiles/.user_variables" ]] && source "$HOME/dotfiles/.user_variables"
 
-# Append Homebrew path before system bin
-[[ -s "$HOME/.bash_path" ]] && source "$HOME/.bash_path"
+# Load Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Load rbenv
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)"
-fi
-
-# Load nodenv
-if which nodenv > /dev/null; then
-  eval "$(nodenv init -)"
-fi
-
-# Load pyenv
-if which pyenv > /dev/null; then
-  eval "$(pyenv init -)"
-fi
-
-# Load jenv
-if which jenv > /dev/null; then
-  eval "$(jenv init -)"
-fi
+# Load asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Configure base16 colorscheme
 BASE16_SHELL="$HOME/dotfiles/addons/base16-shell/"
@@ -51,5 +34,3 @@ if type brew &>/dev/null; then
 
   __git_complete g __git_main
 fi
-
-. "$HOME/.cargo/env"
