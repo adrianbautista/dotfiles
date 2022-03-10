@@ -37,7 +37,11 @@ if [[ ! -d "$HOME/.vim/autoload/plug.vim" ]]; then
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
+# Run MacOS setup script
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  . ./scripts/macos.sh
+fi
+
 echo "Configuration done. Boom."
 echo "Now set a terminal and shell color scheme with: base16_THEME_NAME"
 echo "And install plugins in vim by running: :PlugInstall"
-
