@@ -10,3 +10,4 @@ alias h='history'
 alias o="open"
 alias oo="open ."
 alias be='bundle exec'
+alias restart-cam='sudo killall VDCAssistant'

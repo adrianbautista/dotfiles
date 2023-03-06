@@ -126,9 +126,9 @@ let g:airline_right_sep=''
 
 " Disable colorscheme background, so defaults to terminal
 let g:gitgutter_override_sign_column_highlight=0
-highlight Normal ctermbg=none guibg=none
-highlight SignColumn ctermbg=none guibg=none
-highlight LineNr ctermbg=none guibg=none
+highlight Normal ctermbg=NONE guibg=NONE
+highlight SignColumn ctermbg=NONE guibg=NONE
+highlight LineNr ctermbg=NONE guibg=NONE
 
 " highlight extra whitespace in red
 highlight ExtraWhitespace ctermbg=red guibg=red
